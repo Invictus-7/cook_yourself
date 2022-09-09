@@ -82,6 +82,15 @@ class RecipeIngredient(models.Model):
                                    related_name='ingredient')
     amount = models.PositiveIntegerField(verbose_name='Количество')
 
+    class Meta:
+        ordering = ('id',)
+        constraints = [
+            models.UniqueConstraint(
+                fields=['recipe', 'ingredient'],
+                name='unique_recipe_and_ingredient',
+            )
+        ]
+
     def __str__(self):
         return f'Ингредиент {self.ingredient} нужен для рецепта {self.recipe}'
 

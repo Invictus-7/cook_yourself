@@ -3,7 +3,6 @@ from django.db import models
 
 from foodgram.settings import (MAX_LEN_EMAIL, MAX_LEN_USERNAME,
                                MAX_LEN_PASSWORD)
-
 from users.validators import validate_username
 
 USER = 'user'

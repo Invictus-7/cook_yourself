@@ -4,7 +4,6 @@ from djoser.serializers import UserSerializer as UserHandleSerializer
 from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator
 
-
 from api.fields import Base64ImageField
 from recipes.models import Ingredient, Recipe, RecipeIngredient, Tag
 from users.models import Follow
@@ -95,18 +94,18 @@ class RecipeSerializer(serializers.ModelSerializer):
         errors = []
         if not ingredients:
             errors.append('Добавьте минимум один ингредиент для рецепта')
-        ingredients_set = []
+        added_ingredients = []
         for ingredient in ingredients:
             if int(ingredient['amount']) <= 0:
                 errors.append(
                     'Количество ингредиента с id {0} должно '
                     'быть целым и больше 0.'.format(ingredient["id"])
                 )
-            if ingredient['id'] in ingredients_set:
+            if ingredient['id'] in added_ingredients:
                 errors.append(
                     'Дважды один тот же ингредиент в рецепт положить нельзя.'
                 )
-            ingredients_set.append(ingredient['id'])
+            added_ingredients.append(ingredient['id'])
         tags = data.get('tags')
         if len(tags) > len(set(tags)):
             errors.append('Один и тот же тэг нельзя применять дважды.')
@@ -148,8 +147,10 @@ class RecipeSerializer(serializers.ModelSerializer):
         instance.tags.clear()
         instance.tags.set(validated_data.pop('tags'))
         RecipeIngredient.objects.filter(recipe=instance).delete()
-        self.create_ingredients(recipe=instance,
-                                ingredients=validated_data.pop('ingredients'))
+        self.create_ingredients(
+            recipe=instance,
+            ingredients=validated_data.pop('ingredients')
+        )
         super().update(instance, validated_data)
         return instance
 
@@ -178,9 +179,6 @@ class FollowSerializer(serializers.ModelSerializer):
         fields = ('id', 'email', 'username', 'first_name', 'last_name',
                   'is_subscribed', 'recipes', 'recipes_count',)
 
-    def to_internal_value(self, data):
-        return data
-
     def validate(self, data):
         """Валидация различных данных на уровне сериализатора."""
         user_id = data['user_id']
@@ -198,18 +196,15 @@ class FollowSerializer(serializers.ModelSerializer):
         data['author'] = User.objects.get(id=author_id)
         return data
 
-    def create(self, validated_data):
-        return Follow.objects.create(**validated_data)
-
     def get_is_subscribed(self, obj):
         return Follow.objects.filter(user=obj.user, author=obj.author).exists()
 
     def get_recipes(self, obj):
-        recipes_set = Recipe.objects.filter(author=obj.author)
+        recipes_items = Recipe.objects.filter(author=obj.author)
         limit = self.context.get('request').GET.get('recipes_limit')
         if limit:
-            recipes_set = recipes_set[:int(limit)]
-        return FavoriteOrFollowSerializer(recipes_set, many=True).data
+            recipes_items = recipes_items[:int(limit)]
+        return FavoriteOrFollowSerializer(recipes_items, many=True).data
 
     def get_recipes_count(self, obj):
         return Recipe.objects.filter(author=obj.author).count()
