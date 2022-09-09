@@ -11,6 +11,3 @@ pytest-pythonpath==0.7.3
 djangorestframework-simplejwt==4.7.2
 requests==2.26.0
 sorl-thumbnail==12.9.0
-
-
-
