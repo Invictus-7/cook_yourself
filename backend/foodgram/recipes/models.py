@@ -74,7 +74,8 @@ class Tag(models.Model):
 class RecipeIngredient(models.Model):
     """Промежуточная модель рецепт-ингредиент."""
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE,
-                               verbose_name='Рецепт', related_name='recipe')
+                               verbose_name='Рецепт',
+                               related_name='recipe_ingredients')
 
     ingredient = models.ForeignKey(Ingredient, null=True,
                                    on_delete=models.CASCADE,
