@@ -20,7 +20,7 @@ class User(AbstractUser):
         validators=(validate_username,))
 
     first_name = models.CharField(verbose_name='Имя', max_length=150)
-    last_name = models.CharField(verbose_name='Фамилия', max_length=150)
+    last_name = models.CharField(verbose_name='ФамилиЯ', max_length=150)
     email = models.EmailField(verbose_name='E-mail',
                               max_length=MAX_LEN_EMAIL,
                               unique=True)
