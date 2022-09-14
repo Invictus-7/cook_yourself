@@ -48,7 +48,7 @@ class UserViewSet(UserHandleSet):
                                      author=author).exists():
                 Follow.objects.filter(user=request.user,
                                       author=author).delete()
-            return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
     @action(detail=False, permission_classes=(IsAuthenticated,))
     def subscriptions(self, request):
