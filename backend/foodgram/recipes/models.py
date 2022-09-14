@@ -11,7 +11,7 @@ class Recipe(models.Model):
     name = models.CharField(verbose_name='Название', max_length=100)
     text = models.TextField(verbose_name='Описание')
     cooking_time = models.PositiveIntegerField(
-                                    verbose_name='Время приготовления')
+        verbose_name='Время приготовления')
     tags = models.ManyToManyField('Tag', verbose_name='Ярлык')
     ingredients = models.ManyToManyField(
         'Ingredient', through='RecipeIngredient', related_name='recipe')
@@ -34,7 +34,7 @@ class Recipe(models.Model):
 class Ingredient(models.Model):
     name = models.CharField(max_length=200, verbose_name='Название')
     measurement_unit = models.CharField(
-                        verbose_name='Единицы измерения', max_length=200)
+        verbose_name='Единицы измерения', max_length=200)
 
     class Meta:
         ordering = ('id',)

@@ -18,9 +18,8 @@ from api.serializers import (
     RecipeSerializer, TagSerializer
 )
 from foodgram.settings import SHOPPING_LIST_NAME, SHOPPING_LIST_STRING
-from recipes.models import (
-     Ingredient, RecipeIngredient, Recipe, Tag, Favorite, ShoppingCart
-)
+from recipes.models import (Ingredient, RecipeIngredient, Recipe, Tag,
+                            Favorite, ShoppingCart)
 from users.models import Follow
 
 
@@ -127,14 +126,13 @@ class RecipeViewSet(viewsets.ModelViewSet):
         shopping_list = RecipeIngredient.objects.filter(
             recipe__shopping_cart__user=request.user).values(
             name=F('ingredient__name'),
-            measurement_unit=F(
-             'ingredient__measurement_unit')).annotate(
-             total_amount=Sum('amount'))
+            measurement_unit=F('ingredient__measurement_unit')).annotate(
+            total_amount=Sum('amount'))
 
         text = '\n'.join([SHOPPING_LIST_STRING.format(
-                item['name'], item['measurement_unit'],
-                item['total_amount'])
-                for item in shopping_list])
+               item['name'], item['measurement_unit'],
+               item['total_amount'])
+            for item in shopping_list])
         response = HttpResponse(text, content_type='text/plain')
         response['Content-Disposition'] = (
             f'attachment; 'f'filename={SHOPPING_LIST_NAME}')
