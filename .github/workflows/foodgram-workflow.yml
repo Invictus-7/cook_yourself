@@ -22,7 +22,7 @@ jobs:
         pip install flake8 pep8-naming flake8-broken-line flake8-return
         pip install -r backend/foodgram/requirements.txt
 
-    - name: Test with flake8 and django tests
+    - name: Test with flake8
       run: |
         python -m flake8
 
@@ -47,7 +47,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: invictus7/api_yamdb:latest
+          tags: invictus7/foodgram:latest
           context: foodgram
           file: foodgram/Dockerfile
 
