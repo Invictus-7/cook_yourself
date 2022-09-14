@@ -8,7 +8,7 @@ User = get_user_model()
 
 class Recipe(models.Model):
 
-    name = models.CharField(verbose_name='Название', max_length=100)
+    name = models.CharField(verbose_name='Названия', max_length=100)
     text = models.TextField(verbose_name='Описание')
     cooking_time = models.PositiveIntegerField(
         verbose_name='Время приготовления')
