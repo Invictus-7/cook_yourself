@@ -12,7 +12,7 @@ services:
     env_file:
       - ./.env
   web:
-    build: .
+    image: invictus7/foodgram:v1.0
     restart: always
     volumes:
 
