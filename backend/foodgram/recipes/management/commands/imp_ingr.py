@@ -17,7 +17,7 @@ class Command(BaseCommand):
                 if file_name.endswith('.csv'):
                     file_path = os.path.join(roots, file_name)
                     files.append(file_path)
-                return files
+        return files
 
     def transfer(self, base_item):
         model_name = BASE_DICT[base_item][0]
