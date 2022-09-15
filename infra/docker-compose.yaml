@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-
   db:
     image: postgres:13.0-alpine
     volumes:
@@ -22,7 +21,7 @@ services:
       - ./.env
 
   frontend:
-      image: invictus7/foodgram_frontend:latest
+    image: invictus7/foodgram_frontend:latest
     volumes:
       - ../frontend/:/app/result_build/
     depends_on:
