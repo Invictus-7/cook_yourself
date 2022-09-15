@@ -1,8 +1,24 @@
 # Foodgram
 
-Проект помогает хранить рецепты, обменивать ими, а также создавать и скачивать список 
+Проект помогает хранить рецепты, обмениваться ими, а также создавать и скачивать список 
 покупок для них.
+---
 
+[![foodgram_workflow](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram_workflow.yml/badge.svg)](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram_workflow.yml)
+
+---
+---
+
+### [Cсылка на сайт](http://158.160.9.218)
+
+**логин** ..... \
+**пароль** .....
+
+[Панель администратора](http://158.160.9.218/admin/)
+
+[Redoc](http://158.160.9.218/api/docs/redoc.html)
+
+---
 #### Учебный проект Яндекс.Практикума.
 ##### Когорта Python 10 +
 
