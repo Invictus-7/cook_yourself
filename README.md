@@ -2,22 +2,17 @@
 
 Проект помогает хранить рецепты, обмениваться ими, а также создавать и скачивать список 
 покупок для них.
-
 ---
 
-[![foodgram workflow](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram-workflow.yml/badge.svg)](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram-workflow.yml)
+[![foodgram_workflow](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram_workflow.yml/badge.svg)](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram_workflow.yml)
 
 ---
-
+---
 
 ### [Cсылка на сайт](http://158.160.9.218)
 
-#### Данные для проверяющего:
-(вход с правами суперпользователя)
-
-**логин**: review@mail.ru \
-**пароль**: recipe_777
-
+**логин** ..... \
+**пароль** .....
 
 [Панель администратора](http://158.160.9.218/admin/)
 
@@ -29,7 +24,7 @@
 
 ###Автор - Кирилл Резник
 
-
+---
 ---
 
 ## Технологии
