@@ -4,15 +4,16 @@
 покупок для них.
 ---
 
-[![foodgram_workflow](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram_workflow.yml/badge.svg)](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram_workflow.yml)
+[![foodgram workflow](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram-workflow.yml/badge.svg)](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram-workflow.yml)
 
----
 ---
 
 ### [Cсылка на сайт](http://158.160.9.218)
 
-**логин** ..... \
-**пароль** .....
+**логин** review@mail.ru \
+**пароль** recipe_777
+
+---
 
 [Панель администратора](http://158.160.9.218/admin/)
 
