@@ -23,9 +23,9 @@ class Command(BaseCommand):
             file.close()
 
         tags = (
-            ('Завтрак', '#AFB83B', 'breakfast'),
-            ('Обед', '#FAD000', 'dinner'),
-            ('Ужин', '#FF9933', 'supper'),
+            ('Завтрак', '#E26C2D', 'breakfast'),
+            ('Обед', '#008000', 'dinner'),
+            ('Ужин', '#7366BD', 'supper'),
         )
 
         for tag in tags:

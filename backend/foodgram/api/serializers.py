@@ -110,6 +110,10 @@ class RecipeSerializer(serializers.ModelSerializer):
         tags = data.get('tags')
         if len(tags) > len(set(tags)):
             errors.append('Один и тот же тэг нельзя применять дважды.')
+        cooking_time = float(data.get('cooking_time'))
+        if cooking_time < 1:
+            errors.append(
+                'Время приготовления должно быть не меньше 1 минуты')
 
         if errors:
             raise serializers.ValidationError({'errors': errors})

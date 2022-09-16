@@ -13,3 +13,8 @@ def slug_validator(input_slug):
     if re.match(r'^[-a-zA-Z0-9_]+', input_slug):
         return input_slug
     raise ValidationError(f'Слаг формата "{input_slug}" недопустим.')
+
+
+def validate_cooking_time(time):
+    pass
+
