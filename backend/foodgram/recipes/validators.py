@@ -17,4 +17,3 @@ def slug_validator(input_slug):
 
 def validate_cooking_time(time):
     pass
-
