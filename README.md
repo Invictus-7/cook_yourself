@@ -1,10 +1,10 @@
-# Foodgram
+# Сам себе повар
 
 Проект помогает хранить рецепты, обмениваться ими, а также создавать и скачивать список 
 покупок для них.
 ---
 
-[![foodgram workflow](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram-workflow.yml/badge.svg)](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram-workflow.yml)
+[![cook_yourself](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram-workflow.yml/badge.svg)](https://github.com/Invictus-7/foodgram-project-react/actions/workflows/foodgram-workflow.yml)
 
 ---
 
@@ -20,8 +20,6 @@
 [Redoc](http://158.160.9.218/api/docs/redoc.html)
 
 ---
-#### Учебный проект Яндекс.Практикума.
-##### Когорта Python 10 +
 
 ###Автор - Кирилл Резник
 
@@ -47,8 +45,8 @@ Cайт Foodgram, «Продуктовый помощник» - онлайн-с�
 
 1. Клонируйте проект на свой компьютер и перейдите в его корневую папку:
 ```
-git clone https://github.com/Invictus-7/foodgram-project-react.git
-cd foodgram-project-react
+git clone https://github.com/Invictus-7/cook_yourself.git
+cd cook_yourself
 ```
 2. Создайте и активируйте виртуальное окружение:
 
